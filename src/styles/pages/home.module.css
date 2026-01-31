@@ -1,0 +1,285 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  z-index: 100;
+}
+
+@media (prefers-color-scheme: dark) {
+  .header {
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 1.5rem;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+@media (max-width: 640px) {
+  .nav {
+    gap: 1rem;
+  }
+}
+
+.nav a {
+  color: #525252;
+  font-weight: 500;
+  transition: color 0.2s;
+  font-size: 0.95rem;
+}
+
+.nav a:hover {
+  color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav a {
+    color: #a1a1a1;
+  }
+
+  .nav a:hover {
+    color: #fff;
+  }
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding-top: 5rem;
+}
+
+/* Hero Section */
+.hero {
+  min-height: calc(100vh - 5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.heroContent {
+  max-width: 800px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroBanner {
+  width: 100%;
+  height: auto;
+  max-width: 420px;
+  margin: 0 auto 1.5rem;
+}
+
+.heroTitle {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: #000;
+  letter-spacing: -0.02em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .heroTitle {
+    color: #fff;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  color: #525252;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+@media (prefers-color-scheme: dark) {
+  .heroSubtitle {
+    color: #a1a1a1;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSubtitle {
+    font-size: 1.125rem;
+  }
+}
+
+/* Sections */
+.section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 1.5rem;
+  }
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #000;
+  letter-spacing: -0.02em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .sectionTitle {
+    color: #fff;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+}
+
+.sectionText {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #525252;
+  max-width: 700px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .sectionText {
+    color: #a1a1a1;
+  }
+}
+
+/* Projects */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.projectCard {
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.projectCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  .projectCard {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .projectCard:hover {
+    box-shadow: 0 12px 24px rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.projectCard h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  .projectCard h3 {
+    color: #fff;
+  }
+}
+
+.projectCard p {
+  color: #525252;
+  line-height: 1.6;
+}
+
+@media (prefers-color-scheme: dark) {
+  .projectCard p {
+    color: #a1a1a1;
+  }
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 2rem 3rem;
+  margin-top: 4rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .footer {
+    border-top-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footerText {
+  font-size: 0.875rem;
+  color: #525252;
+}
+
+.calypsoLogo {
+  display: block;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.calypsoLogo:hover {
+  opacity: 1;
+}
