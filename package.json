@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack -H 127.0.0.1",
     "build": "next build --webpack",
     "build:turbo": "next build --turbo",
-    "start": "next start",
+    "start": "next start -H 127.0.0.1",
     "lint": "eslint"
   },
   "dependencies": {
