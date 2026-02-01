@@ -7,7 +7,8 @@
     "build": "next build --webpack",
     "build:turbo": "next build --turbo",
     "start": "next start -H 127.0.0.1",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postinstall": "node scripts/patch-next-css-hmr.mjs"
   },
   "dependencies": {
     "next": "16.1.6",
