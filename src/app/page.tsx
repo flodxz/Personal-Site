@@ -11,15 +11,6 @@ export default function Home() {
       <main className={styles.main}>
         <section className={styles.hero}>
           <div className={styles.heroContent}>
-            <Image
-              className={styles.heroBanner}
-              src="/flod-banner.png"
-              alt="Flod"
-              width={4338}
-              height={4050}
-              sizes="(max-width: 768px) 80vw, 420px"
-              priority
-            />
             <h1 className={styles.heroTitle}>Hello, I&apos;m Jonas 👋 </h1>
             <p className={styles.heroSubtitle}>
               I’m studying Industrial Engineering at the KUL in Ghent.<br></br>
