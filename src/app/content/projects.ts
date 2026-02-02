@@ -102,7 +102,16 @@ export const pastProjects: Project[] = [
     stack: "React (Next.js) · Firebase",
     description:
       "A community-driven archive built to document the history of TNT Tag, preserving key moments, updates, and eras in a single, navigable timeline. The project focuses on structure, accuracy, and long-term accessibility rather than fleeting hype.",
-    link: { href: "https://tagtimeline.com", label: "Visit tagtimeline.com" },
+    links: [
+      {
+        href: "https://tagtimeline.com",
+        label: "Visit tagtimeline.com",
+      },
+      {
+        href: "https://github.com/flodlol/Tag-History",
+        label: "GitHub Repository",
+      },
+    ],
     logo: {
       src: "/tag-timeline/tag-timeline-logo.png",
       alt: "Tag-Timeline logo",
@@ -123,6 +132,45 @@ export const pastProjects: Project[] = [
         width: 2940,
         height: 1476,
       },
+    },
+  },
+];
+
+export const smallerPythonProjects: Project[] = [
+  {
+    id: "python-mini-1",
+    title: "CLI Habit Tracker",
+    period: "2023",
+    stack: "Python · SQLite",
+    description:
+      "A tiny command-line habit tracker with streaks, reminders, and quick weekly summaries.",
+    link: {
+      href: "https://github.com/your-username/cli-habit-tracker",
+      label: "View on GitHub",
+    },
+    modal: {
+      paragraphs: [
+        "A small Python CLI app for tracking daily habits with a simple SQLite database.",
+        "Built to be fast to use: add/check off habits, view streaks, and print lightweight weekly summaries.",
+      ],
+    },
+  },
+  {
+    id: "python-mini-2",
+    title: "Bulk File Renamer",
+    period: "2022",
+    stack: "Python",
+    description:
+      "A script that batch-renames files using rules (prefix/suffix, numbering, regex replace).",
+    link: {
+      href: "https://github.com/your-username/bulk-file-renamer",
+      label: "View on GitHub",
+    },
+    modal: {
+      paragraphs: [
+        "A utility script for cleaning up messy folders by renaming files in bulk.",
+        "Supports patterns like numbering, regex find/replace, and safe preview mode before applying changes.",
+      ],
     },
   },
 ];

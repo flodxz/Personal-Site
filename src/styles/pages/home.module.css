@@ -653,12 +653,92 @@
   width: 14px;
   height: 14px;
   color: rgba(0, 0, 0, 0.4);
-  opacity: 0.55;
+  opacity: 0.7;
   flex: 0 0 auto;
 }
 
 .heroSkillText {
   line-height: 1;
+}
+
+.heroSkillItem[data-icon="typescript"] {
+  border-color: rgba(49, 120, 198, 0.32);
+  background: rgba(49, 120, 198, 0.06);
+}
+
+.heroSkillItem[data-icon="typescript"] .heroSkillIcon {
+  color: #3178c6;
+  opacity: 0.95;
+}
+
+.heroSkillItem[data-icon="javascript"] {
+  border-color: rgba(247, 223, 30, 0.36);
+  background: rgba(247, 223, 30, 0.08);
+}
+
+.heroSkillItem[data-icon="javascript"] .heroSkillIcon {
+  color: #f7df1e;
+  opacity: 0.95;
+}
+
+.heroSkillItem[data-icon="python"] {
+  border-color: rgba(55, 118, 171, 0.32);
+  background: rgba(55, 118, 171, 0.07);
+}
+
+.heroSkillItem[data-icon="python"] .heroSkillIcon {
+  color: #3776ab;
+  opacity: 0.95;
+}
+
+.heroSkillItem[data-icon="html"] {
+  border-color: rgba(227, 79, 38, 0.32);
+  background: rgba(227, 79, 38, 0.07);
+}
+
+.heroSkillItem[data-icon="html"] .heroSkillIcon {
+  color: #e34f26;
+  opacity: 0.95;
+}
+
+.heroSkillItem[data-icon="css"] {
+  border-color: rgba(38, 77, 228, 0.32);
+  background: rgba(38, 77, 228, 0.07);
+}
+
+.heroSkillItem[data-icon="css"] .heroSkillIcon {
+  color: #264de4;
+  opacity: 0.95;
+}
+
+.heroSkillItem[data-icon="photoshop"] {
+  border-color: rgba(49, 168, 255, 0.32);
+  background: rgba(49, 168, 255, 0.07);
+}
+
+.heroSkillItem[data-icon="photoshop"] .heroSkillIcon {
+  color: #31a8ff;
+  opacity: 0.95;
+}
+
+.heroSkillItem[data-icon="cinema4d"] {
+  border-color: rgba(155, 81, 224, 0.3);
+  background: rgba(155, 81, 224, 0.07);
+}
+
+.heroSkillItem[data-icon="cinema4d"] .heroSkillIcon {
+  color: #9b51e0;
+  opacity: 0.95;
+}
+
+.heroSkillItem[data-icon="figma"] {
+  border-color: rgba(162, 89, 255, 0.3);
+  background: rgba(162, 89, 255, 0.07);
+}
+
+.heroSkillItem[data-icon="figma"] .heroSkillIcon {
+  color: #a259ff;
+  opacity: 0.95;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -671,6 +751,46 @@
   .heroSkillIcon {
     color: rgba(255, 255, 255, 0.42);
     opacity: 0.5;
+  }
+
+  .heroSkillItem[data-icon="typescript"] {
+    border-color: rgba(49, 120, 198, 0.4);
+    background: rgba(49, 120, 198, 0.16);
+  }
+
+  .heroSkillItem[data-icon="javascript"] {
+    border-color: rgba(247, 223, 30, 0.38);
+    background: rgba(247, 223, 30, 0.14);
+  }
+
+  .heroSkillItem[data-icon="python"] {
+    border-color: rgba(55, 118, 171, 0.4);
+    background: rgba(55, 118, 171, 0.18);
+  }
+
+  .heroSkillItem[data-icon="html"] {
+    border-color: rgba(255, 109, 58, 0.38);
+    background: rgba(255, 109, 58, 0.16);
+  }
+
+  .heroSkillItem[data-icon="css"] {
+    border-color: rgba(56, 123, 255, 0.36);
+    background: rgba(56, 123, 255, 0.16);
+  }
+
+  .heroSkillItem[data-icon="photoshop"] {
+    border-color: rgba(49, 168, 255, 0.38);
+    background: rgba(49, 168, 255, 0.16);
+  }
+
+  .heroSkillItem[data-icon="cinema4d"] {
+    border-color: rgba(155, 81, 224, 0.36);
+    background: rgba(155, 81, 224, 0.16);
+  }
+
+  .heroSkillItem[data-icon="figma"] {
+    border-color: rgba(162, 89, 255, 0.36);
+    background: rgba(162, 89, 255, 0.16);
   }
 }
 
@@ -753,22 +873,22 @@
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
 }
 
 @media (max-width: 768px) {
   .projects {
-    gap: 1.5rem;
-    margin-top: 2.25rem;
+    gap: 1.25rem;
+    margin-top: 2.1rem;
   }
 }
 
 @media (max-width: 420px) {
   .projects {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
-    margin-top: 2rem;
+    gap: 1.1rem;
+    margin-top: 1.85rem;
   }
 }
 
@@ -933,6 +1053,105 @@
   border-radius: 12px;
 }
 
+.pythonProjectsSection {
+  margin-top: 2.25rem;
+}
+
+.pythonProjectsSummary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.35rem 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.02);
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.pythonProjectsSummary::-webkit-details-marker {
+  display: none;
+}
+
+.pythonProjectsSummary::marker {
+  content: "";
+}
+
+.pythonProjectsSummary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
+.pythonProjectsSection[open] .pythonProjectsSummary {
+  border-color: rgba(55, 118, 171, 0.28);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+}
+
+.pythonProjectsSummary:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.6);
+  outline-offset: 3px;
+}
+
+.pythonProjectsSummaryContent {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.pythonProjectsIcon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  border: 1px solid rgba(55, 118, 171, 0.35);
+  background: rgba(10, 24, 61, 0.98);
+  color: #5aa7ff;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  flex: 0 0 auto;
+}
+
+.pythonProjectsIconMark {
+  width: 32px;
+  height: 32px;
+  display: block;
+  opacity: 0.95;
+  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.35));
+}
+
+.pythonProjectsTitle {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #000;
+  letter-spacing: -0.01em;
+}
+
+.pythonProjectsChevron {
+  width: 18px;
+  height: 18px;
+  color: rgba(0, 0, 0, 0.55);
+  flex: 0 0 auto;
+  transition: transform 180ms ease-out, color 180ms ease-out;
+}
+
+.pythonProjectsSection[open] .pythonProjectsChevron {
+  transform: rotate(180deg);
+}
+
+.pythonProjectsBody {
+  margin-top: 1.25rem;
+}
+
+.pythonProjectsBody .projects {
+  margin-top: 1.25rem;
+}
+
 .pastDesign {
   margin-top: 3.5rem;
 }
@@ -948,6 +1167,49 @@
 @media (prefers-color-scheme: dark) {
   .subsectionTitle {
     color: #fff;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .pythonProjectsSummary {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .pythonProjectsSummary:hover {
+    box-shadow: 0 12px 24px rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+
+  .pythonProjectsSection[open] .pythonProjectsSummary {
+    border-color: rgba(55, 118, 171, 0.35);
+    box-shadow: 0 12px 26px rgba(255, 255, 255, 0.06);
+  }
+
+  .pythonProjectsTitle {
+    color: #fff;
+  }
+
+  .pythonProjectsChevron {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.pythonProjectsSummary:active {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .pythonProjectsSummary {
+    padding: 1.2rem 1.25rem;
+  }
+
+  .pythonProjectsSection {
+    margin-top: 2.1rem;
+  }
+
+  .pythonProjectsBody {
+    margin-top: 1.1rem;
   }
 }
 

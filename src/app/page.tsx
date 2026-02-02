@@ -48,7 +48,11 @@ export default function Home() {
               {heroSkills.map((group) => (
                 <ul key={group.label} className={styles.heroSkillList}>
                   {group.items.map((item) => (
-                    <li key={item.label} className={styles.heroSkillItem}>
+                    <li
+                      key={item.label}
+                      className={styles.heroSkillItem}
+                      data-icon={item.icon}
+                    >
                       <SkillLogo
                         icon={item.icon}
                         className={styles.heroSkillIcon}
