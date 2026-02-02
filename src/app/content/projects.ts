@@ -182,7 +182,7 @@ export const designProjects: Project[] = [
         },
         {
           type: "paragraph",
-          text: "This is a small collection of some of the headers I made back then. Full project: [Social Media Headers Vol. 1](https://www.behance.net/gallery/162972537/Social-Media-Headers-Vol-1).",
+          text: "This is a small collection of some of the headers I made back then. \nSee more on the link below.",
         },
       ],
     },
