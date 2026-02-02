@@ -4,6 +4,8 @@ export type SkillIcon =
   | "html"
   | "css"
   | "python"
+  | "react"
+  | "nextjs"
   | "photoshop"
   | "cinema4d"
   | "figma";

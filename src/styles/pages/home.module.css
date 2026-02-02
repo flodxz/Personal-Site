@@ -215,7 +215,7 @@
 .timeline {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 0 2.25rem;
   position: relative;
 }
 
@@ -224,10 +224,23 @@
   position: absolute;
   left: 50%;
   top: 0.5rem;
-  bottom: 0.5rem;
+  bottom: 2.25rem;
   width: 1px;
   transform: translateX(-0.5px);
   background: rgba(0, 0, 0, 0.14);
+}
+
+.timelineEnd {
+  position: absolute;
+  left: 50%;
+  bottom: 0.35rem;
+  transform: translateX(-50%);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(34, 197, 94, 0.9);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  opacity: 0.95;
 }
 
 .timelineItem {
@@ -277,11 +290,24 @@
   height: 32px;
   border-radius: 999px;
   border: 2px solid rgba(0, 0, 0, 0.28);
-  background: transparent;
+  /* Give the dot a fill so the center line doesn't cut through. */
+  background: rgba(255, 255, 255, 0.85);
   transform: scale(calc(0.92 + var(--t) * 0.08));
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.timelineDot[data-multi="true"] {
+  width: 52px;
+  height: 52px;
+  border: 0;
+  background: transparent;
+}
+
+.timelineDot[data-theme="study-track"] {
+  border-color: rgba(96, 165, 250, 0.65);
+  background: rgba(96, 165, 250, 0.1);
 }
 
 .timelineDotIcon {
@@ -289,6 +315,73 @@
   height: 16px;
   color: rgba(0, 0, 0, 0.55);
   opacity: 0.65;
+}
+
+.timelineDotIcons {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.timelineDot[data-multi="true"] .timelineDotIcons {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.timelineDot[data-multi="true"] .timelineDotIcons > span {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+}
+
+.timelineDot[data-multi="true"] .timelineDotIcons > span:first-child {
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.timelineDot[data-multi="true"] .timelineDotIcons > span:last-child {
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.timelineDot[data-multi="true"] .timelineDotIcon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.95;
+}
+
+.timelineDot[data-multi="true"] .timelineDotIcons > span[data-icon="react"] {
+  border-color: rgba(97, 218, 251, 0.9);
+}
+
+.timelineDot[data-multi="true"] .timelineDotIcons > span[data-icon="nextjs"] {
+  border-color: rgba(0, 0, 0, 0.55);
+}
+
+.timelineDotIcons [data-icon="react"] .timelineDotIcon {
+  color: #61dafb;
+  opacity: 0.95;
+}
+
+.timelineDotIcons [data-icon="nextjs"] .timelineDotIcon {
+  color: rgba(0, 0, 0, 0.78);
+  opacity: 0.9;
+}
+
+.timelineDotImg {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
 }
 
 .timelineDot[data-icon="html"] {
@@ -385,12 +478,46 @@
 
   .timelineDot {
     border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  .timelineDot[data-multi="true"] {
+    border: 0;
     background: transparent;
+  }
+
+  .timelineDot[data-multi="true"] .timelineDotIcons > span {
+    background: rgba(0, 0, 0, 0.72);
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55);
+  }
+
+  .timelineDot[data-multi="true"] .timelineDotIcons > span[data-icon="react"] {
+    border-color: rgba(97, 218, 251, 0.95);
+  }
+
+  .timelineDot[data-multi="true"] .timelineDotIcons > span[data-icon="nextjs"] {
+    border-color: rgba(255, 255, 255, 0.7);
+  }
+
+  .timelineDot[data-theme="study-track"] {
+    border-color: rgba(96, 165, 250, 0.65);
+    background: rgba(96, 165, 250, 0.12);
   }
 
   .timelineDotIcon {
     color: rgba(255, 255, 255, 0.6);
     opacity: 0.55;
+  }
+
+  .timelineDotIcons [data-icon="react"] .timelineDotIcon {
+    color: #61dafb;
+    opacity: 0.95;
+  }
+
+  .timelineDotIcons [data-icon="nextjs"] .timelineDotIcon {
+    color: rgba(255, 255, 255, 0.85);
+    opacity: 0.9;
   }
 
   .timelineDot[data-icon="html"] {
@@ -434,12 +561,31 @@
   .timelineBody {
     color: rgba(255, 255, 255, 0.68);
   }
+
+  .timelineEnd {
+    color: rgba(34, 197, 94, 0.92);
+    opacity: 0.9;
+  }
 }
 
 @media (max-width: 640px) {
   .timeline::before {
     left: 20px;
     transform: none;
+  }
+
+  .timelineEnd {
+    left: 20px;
+  }
+
+  .timelineDot {
+    width: 28px;
+    height: 28px;
+  }
+
+  .timelineDotIcon {
+    width: 14px;
+    height: 14px;
   }
 
   .timelineItem {
@@ -462,6 +608,21 @@
   .timelineContent {
     max-width: none;
     transform: translate3d(0, calc(var(--inv) * 10px), 0);
+  }
+
+  .timelineDot[data-multi="true"] {
+    width: 40px;
+    height: 40px;
+  }
+
+  .timelineDot[data-multi="true"] .timelineDotIcons > span {
+    width: 28px;
+    height: 28px;
+  }
+
+  .timelineDot[data-multi="true"] .timelineDotIcon {
+    width: 14px;
+    height: 14px;
   }
 }
 

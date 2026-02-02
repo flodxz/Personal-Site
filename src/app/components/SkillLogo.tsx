@@ -86,6 +86,51 @@ export default function SkillLogo({
           <circle cx="9.2" cy="17.1" r="0.6" fill="currentColor" />
         </svg>
       );
+    case "react":
+      return (
+        <svg {...commonProps} className={className} aria-hidden="true">
+          <circle cx="12" cy="12" r="1.6" fill="currentColor" />
+          <ellipse
+            cx="12"
+            cy="12"
+            rx="8.5"
+            ry="3.3"
+            stroke="currentColor"
+            strokeWidth="1.35"
+          />
+          <ellipse
+            cx="12"
+            cy="12"
+            rx="8.5"
+            ry="3.3"
+            stroke="currentColor"
+            strokeWidth="1.35"
+            transform="rotate(60 12 12)"
+          />
+          <ellipse
+            cx="12"
+            cy="12"
+            rx="8.5"
+            ry="3.3"
+            stroke="currentColor"
+            strokeWidth="1.35"
+            transform="rotate(120 12 12)"
+          />
+        </svg>
+      );
+    case "nextjs":
+      return (
+        <svg {...commonProps} className={className} aria-hidden="true">
+          <circle cx="12" cy="12" r="8.6" stroke="currentColor" strokeWidth="1.35" />
+          <path
+            d="M9 16V8l6.7 8V8"
+            stroke="currentColor"
+            strokeWidth="1.35"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      );
     case "html":
       return (
         <svg {...commonProps} className={className} aria-hidden="true">

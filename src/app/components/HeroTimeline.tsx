@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import styles from "../../styles/pages/home.module.css";
 import type { SkillTimelineItem } from "../content/skill-timeline";
 import SkillLogo from "./SkillLogo";
@@ -100,8 +101,29 @@ export default function HeroTimeline({ items }: { items: SkillTimelineItem[] }) 
                 <span
                   className={styles.timelineDot}
                   data-icon={item.icon ?? ""}
+                  data-theme={item.dotTheme ?? ""}
+                  data-multi={item.dotIcons?.length ? "true" : ""}
                 >
-                  {item.icon ? (
+                  {item.dotImage ? (
+                    <Image
+                      className={styles.timelineDotImg}
+                      src={item.dotImage.src}
+                      alt={item.dotImage.alt}
+                      width={item.dotImage.width}
+                      height={item.dotImage.height}
+                    />
+                  ) : item.dotIcons?.length ? (
+                    <span className={styles.timelineDotIcons} aria-hidden="true">
+                      {item.dotIcons.map((icon) => (
+                        <span key={icon} data-icon={icon}>
+                          <SkillLogo
+                            icon={icon}
+                            className={styles.timelineDotIcon}
+                          />
+                        </span>
+                      ))}
+                    </span>
+                  ) : item.icon ? (
                     <SkillLogo
                       icon={item.icon}
                       className={styles.timelineDotIcon}
@@ -128,6 +150,9 @@ export default function HeroTimeline({ items }: { items: SkillTimelineItem[] }) 
             </li>
           );
         })}
+        <li className={styles.timelineEnd} aria-hidden="true">
+          more to learn, more to do ... 
+        </li>
       </ol>
     </div>
   );
