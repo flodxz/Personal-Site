@@ -46,7 +46,7 @@ export default function ContactSection() {
         Contact
       </h2>
       <p className={styles.sectionText}>
-        Want to reach out? Email is best — I’m also on Discord and GitHub.
+        Want to reach out? Email works best, but I’m also on Discord and GitHub.
       </p>
 
       <div className={styles.contactGrid}>
