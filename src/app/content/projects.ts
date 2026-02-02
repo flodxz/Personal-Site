@@ -4,7 +4,8 @@ export type ProjectLink = {
 };
 
 export type ProjectModal = {
-  paragraphs: string[];
+  paragraphs?: string[];
+  content?: ProjectModalContentBlock[];
   screenshot?: {
     src: string;
     alt: string;
@@ -13,13 +14,42 @@ export type ProjectModal = {
   };
 };
 
+export type ProjectModalContentBlock =
+  | {
+      type: "paragraph";
+      text: string;
+    }
+  | {
+      type: "image";
+      src: string;
+      alt: string;
+      width: number;
+      height: number;
+    }
+  | {
+      type: "imageRow";
+      images: Array<{
+        src: string;
+        alt: string;
+        width: number;
+        height: number;
+      }>;
+    };
+
 export type Project = {
   id: string;
   title: string;
   period?: string;
-  stack?: string;
+  stack?: string | string[];
   description: string;
   link?: ProjectLink;
+  links?: ProjectLink[];
+  thumbnail?: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
   logo?: {
     src: string;
     alt: string;
@@ -100,12 +130,79 @@ export const pastProjects: Project[] = [
 export const designProjects: Project[] = [
   {
     id: "design-1",
-    title: "placeholder design project",
-    description: "coming soon",
+    title: "Headers",
+    period: "Late 2022 - Early 2024",
+    stack: "Photoshop · Cinema 4D",
+    description: "Click to read more.",
+    thumbnail: {
+      src: "/design/headers/headers-preview-1.png",
+      alt: "Headers preview",
+      width: 2200,
+      height: 734,
+    },
+    links: [
+      {
+        href: "https://www.behance.net/gallery/162972537/Social-Media-Headers-Vol-1",
+        label: "View on Behance",
+      },
+    ],
+    modal: {
+      content: [
+        {
+          type: "paragraph",
+          text: "In the past, when I was younger, I used to make (Twitter) headers for clients.",
+        },
+        {
+          type: "image",
+          src: "/design/headers/header-1.webp",
+          alt: "(Twitter) header design example",
+          width: 2800,
+          height: 933,
+        },
+        {
+          type: "paragraph",
+          text: "Most of these started with a simple brief (colors, vibe, what to include), then I’d make a 3D version of their name in Cinema 4D and compose everything in Adobe Photoshop, lighting, textures, typography, and all the small details that make it feel complete.",
+        },
+        {
+          type: "imageRow",
+          images: [
+            {
+              src: "/design/headers/header-2.webp",
+              alt: "(Twitter) header design example",
+              width: 2800,
+              height: 933,
+            },
+            {
+              src: "/design/headers/header-3.webp",
+              alt: "(Twitter) header design example",
+              width: 2800,
+              height: 933,
+            },
+          ],
+        },
+        {
+          type: "paragraph",
+          text: "This is a small collection of some of the headers I made back then. I don’t do this 'professionally' anymore, but it was a fun little side hustle.",
+        },
+      ],
+    },
   },
   {
     id: "design-2",
-    title: "placeholder design project",
-    description: "coming soon",
+    title: "Design project",
+    period: "Coming soon",
+    description: "Click to read more.",
+    thumbnail: {
+      src: "/flod-banner.png",
+      alt: "Design project thumbnail",
+      width: 1200,
+      height: 630,
+    },
+    modal: {
+      paragraphs: [
+        "Coming soon.",
+        "I’ll add the story, process, and final shots for this design project here.",
+      ],
+    },
   },
 ];

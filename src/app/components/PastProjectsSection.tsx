@@ -16,7 +16,7 @@ export default function PastProjectsSection() {
 
       <div className={styles.pastDesign}>
         <h3 className={styles.subsectionTitle}>Design</h3>
-        <ProjectCards projects={designProjects} />
+        <ProjectCards projects={designProjects} variant="design" />
       </div>
     </section>
   );

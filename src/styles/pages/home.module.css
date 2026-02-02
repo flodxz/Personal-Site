@@ -169,6 +169,7 @@
   margin-bottom: 2rem;
   color: #000;
   letter-spacing: -0.02em;
+  scroll-margin-top: calc(var(--header-height) + 1.25rem);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -219,6 +220,133 @@
   cursor: pointer;
 }
 
+.projectCardDesign {
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.projectCardDesign[role="button"] {
+  cursor: pointer;
+}
+
+.projectCardDesign:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.projectCardDesign:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.6);
+  outline-offset: 3px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .projectCardDesign {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .projectCardDesign:hover {
+    box-shadow: 0 12px 24px rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.projectThumbnail {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  border-radius: 0;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+  .projectThumbnail {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.06);
+  }
+}
+
+.projectThumbnailPlaceholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 0;
+  border: 1px dashed rgba(0, 0, 0, 0.18);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+@media (prefers-color-scheme: dark) {
+  .projectThumbnailPlaceholder {
+    border-color: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.04);
+  }
+}
+
+.projectDesignInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.projectDesignTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: #000;
+  letter-spacing: -0.02em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .projectDesignTitle {
+    color: #fff;
+  }
+}
+
+.projectDesignMeta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.projectDesignDate {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #737373;
+}
+
+.projectDesignStack {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #737373;
+}
+
+.projectDesignStack:not(:first-child) {
+  padding-left: 0.75rem;
+  border-left: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+@media (prefers-color-scheme: dark) {
+  .projectDesignDate {
+    color: #a1a1a1;
+  }
+
+  .projectDesignStack {
+    color: #a1a1a1;
+  }
+
+  .projectDesignStack:not(:first-child) {
+    border-left-color: rgba(255, 255, 255, 0.22);
+  }
+}
+
 .projectCardStatic {
   padding: 2rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -234,6 +362,7 @@
   font-weight: 600;
   margin: 0 0 1rem;
   color: #000;
+  scroll-margin-top: calc(var(--header-height) + 1.25rem);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -562,6 +691,12 @@
   justify-content: flex-start;
 }
 
+.modalLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 @media (prefers-color-scheme: dark) {
   .modalFooter {
     border-top-color: rgba(255, 255, 255, 0.1);
@@ -587,6 +722,22 @@
   }
 }
 
+.modalInlineLink {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.modalInlineLink:hover {
+  text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+  .modalInlineLink {
+    color: #60a5fa;
+  }
+}
+
 .externalIcon {
   width: 18px;
   height: 18px;
@@ -598,9 +749,21 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 14px;
+  border-radius: 0;
   border: 1px solid rgba(0, 0, 0, 0.12);
   margin: 0;
+}
+
+.modalImageRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .modalImageRow {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -948,6 +1111,27 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.footerLeft .footerText + .footerText {
+  margin-left: 0.5rem;
+}
+
+.footerLink {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footerLink:hover {
+  color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  .footerLink:hover {
+    color: #fff;
+  }
 }
 
 .footerText {

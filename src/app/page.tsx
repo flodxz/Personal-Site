@@ -31,18 +31,30 @@ export default function Home() {
 	        <ContactSection />
       </main>
 
-      <footer className={styles.footer}>
-        <div className={styles.footerContent}>
-          <div className={styles.footerLeft}>
-            <Image
-              className={styles.calypsoLogo}
-              src="/calypso-logo.png"
-              alt=""
-              width={28}
-              height={28}
-            />
-            <span className={styles.footerText}>Powered by Calypso Inc.</span>
-          </div>
+	      <footer className={styles.footer}>
+	        <div className={styles.footerContent}>
+	          <div className={styles.footerLeft}>
+	            <Image
+	              className={styles.calypsoLogo}
+	              src="/calypso-logo.png"
+	              alt=""
+	              width={28}
+	              height={28}
+	            />
+	            <span className={styles.footerText}>Powered by Calypso Inc.</span>
+	            <span className={styles.footerText}>
+	              This project is open source, view it{" "}
+	              <a
+	                className={styles.footerLink}
+	                href="https://github.com/flodxz/Personal-Site"
+	                target="_blank"
+	                rel="noopener noreferrer"
+	              >
+	                here
+	              </a>
+	              .
+	            </span>
+	          </div>
 
 	          <a
 	            className={styles.githubLink}
