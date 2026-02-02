@@ -121,9 +121,32 @@
   letter-spacing: -0.02em;
 }
 
+.typingName {
+  display: inline-flex;
+  align-items: baseline;
+  min-width: 7ch;
+}
+
+.typingCursor {
+  display: inline-block;
+  margin-left: 0.1em;
+  opacity: 0.6;
+  animation: typingCursorBlink 1.05s steps(1, end) infinite;
+}
+
+@keyframes typingCursorBlink {
+  50% {
+    opacity: 0;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   .heroTitle {
     color: #fff;
+  }
+
+  .typingCursor {
+    opacity: 0.5;
   }
 }
 
@@ -157,6 +180,70 @@
 @media (max-width: 768px) {
   .heroSubtitle {
     font-size: 1.05rem;
+  }
+}
+
+.heroSkills {
+  width: 100%;
+  max-width: 760px;
+  margin-top: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.heroSkillList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.heroSkillItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.015);
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #404040;
+}
+
+.heroSkillIcon {
+  width: 14px;
+  height: 14px;
+  color: rgba(0, 0, 0, 0.4);
+  opacity: 0.55;
+  flex: 0 0 auto;
+}
+
+.heroSkillText {
+  line-height: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  .heroSkillItem {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    color: #e5e5e5;
+  }
+
+  .heroSkillIcon {
+    color: rgba(255, 255, 255, 0.42);
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 640px) {
+  .heroSkills {
+    margin-top: 1.5rem;
   }
 }
 

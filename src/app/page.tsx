@@ -3,6 +3,9 @@ import styles from "../styles/pages/home.module.css";
 import ProjectsSection from "./components/ProjectsSection";
 import PastProjectsSection from "./components/PastProjectsSection";
 import ContactSection from "./components/ContactSection";
+import { heroSkills } from "./content/skills";
+import SkillLogo from "./components/SkillLogo";
+import TypingName from "./components/TypingName";
 
 export default function Home() {
   const year = new Date().getFullYear();
@@ -20,11 +23,35 @@ export default function Home() {
       <main className={styles.main}>
         <section className={styles.hero}>
           <div className={styles.heroContent}>
-            <h1 className={styles.heroTitle}>Hello, I’m Jonas 👋 </h1>
+            <h1 className={styles.heroTitle}>
+              <span aria-hidden="true">👋</span> Hello, I’m{" "}
+              <TypingName
+                words={["Jonas", "flodlol"]}
+                typingMs={200}
+                deletingMs={140}
+                pauseMs={1800}
+              />
+            </h1>
             <p className={styles.heroSubtitle}>
               I’m studying Industrial Engineering at the KUL in Ghent.<br></br>
               And I sometimes code in my free time.
             </p>
+
+            <div className={styles.heroSkills} aria-label="Skills">
+              {heroSkills.map((group) => (
+                <ul key={group.label} className={styles.heroSkillList}>
+                  {group.items.map((item) => (
+                    <li key={item.label} className={styles.heroSkillItem}>
+                      <SkillLogo
+                        icon={item.icon}
+                        className={styles.heroSkillIcon}
+                      />
+                      <span className={styles.heroSkillText}>{item.label}</span>
+                    </li>
+                  ))}
+                </ul>
+              ))}
+            </div>
           </div>
         </section>
 
