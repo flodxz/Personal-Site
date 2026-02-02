@@ -119,6 +119,20 @@
   margin-bottom: 1rem;
   color: #000;
   letter-spacing: -0.02em;
+  display: flex;
+  justify-content: center;
+}
+
+.heroTitleInner {
+  position: relative;
+  display: inline-block;
+  padding-left: 1.15em;
+}
+
+.heroWave {
+  position: absolute;
+  left: 0;
+  top: 0.05em;
 }
 
 .typingName {
@@ -193,6 +207,264 @@
   gap: 0.5rem;
 }
 
+/* Skills timeline (MUI-inspired) */
+.timelineWrap {
+  margin-top: 2rem;
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 1px;
+  transform: translateX(-0.5px);
+  background: rgba(0, 0, 0, 0.14);
+}
+
+.timelineItem {
+  --t: 0;
+  --inv: calc(1 - var(--t));
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 52px 1fr;
+  align-items: stretch;
+  gap: 1rem;
+  padding: 0.9rem 0;
+}
+
+.timelineItem[data-side="left"] {
+  --contentDir: -1;
+  --oppositeDir: 1;
+}
+
+.timelineItem[data-side="right"] {
+  --contentDir: 1;
+  --oppositeDir: -1;
+}
+
+.timelineSlot {
+  display: flex;
+  align-items: center;
+}
+
+.timelineSeparator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  opacity: var(--t);
+}
+
+.timelineConnector {
+  width: 2px;
+  flex: 1 1 auto;
+  min-height: 18px;
+  background: rgba(0, 0, 0, 0.22);
+  border-radius: 999px;
+}
+
+.timelineDot {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 2px solid rgba(0, 0, 0, 0.28);
+  background: transparent;
+  transform: scale(calc(0.92 + var(--t) * 0.08));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timelineDotIcon {
+  width: 16px;
+  height: 16px;
+  color: rgba(0, 0, 0, 0.55);
+  opacity: 0.65;
+}
+
+.timelineDot[data-icon="html"] {
+  border-color: rgba(227, 79, 38, 0.55);
+  background: rgba(227, 79, 38, 0.08);
+}
+
+.timelineDot[data-icon="html"] .timelineDotIcon {
+  color: #e34f26;
+  opacity: 0.95;
+}
+
+.timelineDot[data-icon="javascript"] {
+  border-color: rgba(247, 223, 30, 0.45);
+  background: rgba(247, 223, 30, 0.08);
+}
+
+.timelineDot[data-icon="javascript"] .timelineDotIcon {
+  color: #f7df1e;
+  opacity: 0.95;
+}
+
+.timelineDot[data-icon="python"] {
+  border-color: rgba(55, 118, 171, 0.55);
+  background: rgba(55, 118, 171, 0.08);
+}
+
+.timelineDot[data-icon="python"] .timelineDotIcon {
+  color: #3776ab;
+  opacity: 0.95;
+}
+
+.timelineOpposite {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.55);
+  opacity: var(--t);
+  transform: translate3d(0, calc(var(--inv) * 14px), 0);
+  will-change: transform, opacity;
+  transition: opacity 120ms linear, transform 120ms ease-out;
+}
+
+.timelineContent {
+  max-width: 360px;
+  opacity: var(--t);
+  transform: translate3d(
+    calc(var(--inv) * var(--contentDir) * 12px),
+    calc(var(--inv) * 14px),
+    0
+  );
+  will-change: transform, opacity;
+  transition: opacity 120ms linear, transform 120ms ease-out;
+}
+
+.timelineTitle {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.92);
+}
+
+.timelineBody {
+  margin-top: 0.2rem;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.62);
+}
+
+.timelineItem[data-side="left"] .timelineSlot:first-child {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.timelineItem[data-side="left"] .timelineSlot:last-child {
+  justify-content: flex-start;
+}
+
+.timelineItem[data-side="right"] .timelineSlot:first-child {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.timelineItem[data-side="right"] .timelineSlot:last-child {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+@media (prefers-color-scheme: dark) {
+  .timeline::before {
+    background: rgba(255, 255, 255, 0.16);
+  }
+
+  .timelineConnector {
+    background: rgba(255, 255, 255, 0.18);
+  }
+
+  .timelineDot {
+    border-color: rgba(255, 255, 255, 0.25);
+    background: transparent;
+  }
+
+  .timelineDotIcon {
+    color: rgba(255, 255, 255, 0.6);
+    opacity: 0.55;
+  }
+
+  .timelineDot[data-icon="html"] {
+    border-color: rgba(255, 109, 58, 0.55);
+    background: rgba(255, 109, 58, 0.1);
+  }
+
+  .timelineDot[data-icon="html"] .timelineDotIcon {
+    color: #ff6d3a;
+    opacity: 0.95;
+  }
+
+  .timelineDot[data-icon="javascript"] {
+    border-color: rgba(247, 223, 30, 0.45);
+    background: rgba(247, 223, 30, 0.1);
+  }
+
+  .timelineDot[data-icon="javascript"] .timelineDotIcon {
+    color: #f7df1e;
+    opacity: 0.95;
+  }
+
+  .timelineDot[data-icon="python"] {
+    border-color: rgba(75, 139, 190, 0.55);
+    background: rgba(75, 139, 190, 0.1);
+  }
+
+  .timelineDot[data-icon="python"] .timelineDotIcon {
+    color: #4b8bbe;
+    opacity: 0.95;
+  }
+
+  .timelineOpposite {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .timelineTitle {
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  .timelineBody {
+    color: rgba(255, 255, 255, 0.68);
+  }
+}
+
+@media (max-width: 640px) {
+  .timeline::before {
+    left: 20px;
+    transform: none;
+  }
+
+  .timelineItem {
+    grid-template-columns: 40px 1fr;
+    gap: 0.85rem;
+  }
+
+  .timelineSlot:first-child {
+    display: none;
+  }
+
+  .timelineSeparator {
+    grid-column: 1;
+  }
+
+  .timelineSlot:last-child {
+    grid-column: 2;
+  }
+
+  .timelineContent {
+    max-width: none;
+    transform: translate3d(0, calc(var(--inv) * 10px), 0);
+  }
+}
+
 .heroSkillList {
   list-style: none;
   padding: 0;
@@ -250,6 +522,10 @@
 @media (max-width: 420px) {
   .heroTitle {
     font-size: 2rem;
+  }
+
+  .heroWave {
+    top: 0.06em;
   }
 
   .heroSubtitle {

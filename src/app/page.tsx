@@ -4,8 +4,10 @@ import ProjectsSection from "./components/ProjectsSection";
 import PastProjectsSection from "./components/PastProjectsSection";
 import ContactSection from "./components/ContactSection";
 import { heroSkills } from "./content/skills";
+import { heroSkillTimeline } from "./content/skill-timeline";
 import SkillLogo from "./components/SkillLogo";
 import TypingName from "./components/TypingName";
+import HeroTimeline from "./components/HeroTimeline";
 
 export default function Home() {
   const year = new Date().getFullYear();
@@ -24,13 +26,18 @@ export default function Home() {
         <section className={styles.hero}>
           <div className={styles.heroContent}>
             <h1 className={styles.heroTitle}>
-              <span aria-hidden="true">👋</span> Hello, I’m{" "}
-              <TypingName
-                words={["Jonas", "flodlol"]}
-                typingMs={200}
-                deletingMs={140}
-                pauseMs={1800}
-              />
+              <span className={styles.heroTitleInner}>
+                <span className={styles.heroWave} aria-hidden="true">
+                  👋
+                </span>{" "}
+                Hello, I’m{" "}
+                <TypingName
+                  words={["Jonas", "flodlol"]}
+                  typingMs={200}
+                  deletingMs={140}
+                  pauseMs={1800}
+                />
+              </span>
             </h1>
             <p className={styles.heroSubtitle}>
               I’m studying Industrial Engineering at the KUL in Ghent.<br></br>
@@ -57,6 +64,17 @@ export default function Home() {
 
 	        <ProjectsSection />
 	        <PastProjectsSection />
+
+          <section className={styles.section} aria-labelledby="timeline">
+            <h2 className={styles.sectionTitle} id="timeline">
+              Timeline
+            </h2>
+            <p className={styles.sectionText}>
+              A quick overview of how I got into building things.
+            </p>
+            <HeroTimeline items={heroSkillTimeline} />
+          </section>
+
 	        <ContactSection />
       </main>
 
