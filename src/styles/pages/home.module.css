@@ -49,6 +49,12 @@
 @media (max-width: 640px) {
   .nav {
     gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav a {
+    font-size: 0.95rem;
   }
 }
 
@@ -82,6 +88,7 @@
 /* Hero Section */
 .hero {
   min-height: calc(100vh - var(--header-height));
+  min-height: calc(100dvh - var(--header-height));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,6 +135,10 @@
   .heroTitle {
     font-size: 2.25rem;
   }
+
+  .hero {
+    padding: 2.5rem 1.5rem;
+  }
 }
 
 .heroSubtitle {
@@ -149,6 +160,16 @@
   }
 }
 
+@media (max-width: 420px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+}
+
 /* Sections */
 .section {
   max-width: 1000px;
@@ -159,7 +180,13 @@
 
 @media (max-width: 768px) {
   .section {
-    padding: 4rem 1.5rem;
+    padding: 3.5rem 1.25rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .section {
+    padding: 3.25rem 1.1rem;
   }
 }
 
@@ -181,6 +208,7 @@
 @media (max-width: 768px) {
   .sectionTitle {
     font-size: 2rem;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -203,6 +231,21 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+  .projects {
+    gap: 1.5rem;
+    margin-top: 2.25rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .projects {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
 }
 
 .projectCard {
@@ -333,6 +376,19 @@
   border-left: 1px solid rgba(0, 0, 0, 0.18);
 }
 
+@media (max-width: 640px) {
+  .projectDesignMeta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .projectDesignStack:not(:first-child) {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   .projectDesignDate {
     color: #a1a1a1;
@@ -437,6 +493,7 @@
   padding: 1.5rem;
   background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(8px);
+  padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
 }
 
 .modal {
@@ -522,6 +579,54 @@
   align-items: center;
   gap: 0.75rem;
   margin-top: 0.4rem;
+}
+
+@media (max-width: 640px) {
+  .modalOverlay {
+    padding: calc(0.75rem + env(safe-area-inset-top))
+      calc(0.75rem + env(safe-area-inset-right))
+      calc(0.75rem + env(safe-area-inset-bottom))
+      calc(0.75rem + env(safe-area-inset-left));
+  }
+
+  .modal {
+    --modal-padding-x: 1.25rem;
+    max-height: calc(100dvh - 1.5rem);
+    border-radius: 14px;
+  }
+
+  .modalHeader {
+    padding: 1.25rem var(--modal-padding-x) 0.85rem;
+  }
+
+  .modalLogo {
+    width: 72px;
+    height: 72px;
+    border-radius: 14px;
+  }
+
+  .modalTitle {
+    font-size: 1.45rem;
+  }
+
+  .modalMeta {
+    flex-wrap: wrap;
+    row-gap: 0.35rem;
+  }
+
+  .modalClose {
+    font-size: 1.85rem;
+  }
+
+  .modalBody {
+    padding: 1.25rem var(--modal-padding-x) 1.75rem;
+    font-size: 1rem;
+  }
+
+  .modalFooter {
+    padding: 0.85rem var(--modal-padding-x)
+      calc(1.25rem + env(safe-area-inset-bottom));
+  }
 }
 
 .modalBadge {
@@ -786,14 +891,34 @@
 
 @media (max-width: 768px) {
   .projectCard {
-    flex-direction: column;
-    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    gap: 1.25rem;
+    padding: 1.75rem;
   }
 
   .projectCardAside {
-    order: -1;
-    width: 100%;
-    justify-content: flex-start;
+    width: auto;
+    justify-content: flex-end;
+    align-self: start;
+  }
+}
+
+@media (max-width: 640px) {
+  .projectCard {
+    grid-template-columns: 1fr;
+  }
+
+  .projectCardAside {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .projectCard {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
   }
 }
 
@@ -802,6 +927,12 @@
   width: clamp(160px, 22vw, 240px);
   height: auto;
   object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .projectLogo {
+    width: 96px;
+  }
 }
 
 .projectTitle {
@@ -817,11 +948,38 @@
   }
 }
 
+@media (max-width: 768px) {
+  .projectTitle {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .projectTitle {
+    font-size: 1.35rem;
+    margin-bottom: 0.85rem;
+  }
+}
+
 .projectMeta {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   margin: 0.35rem 0 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .projectMeta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .projectMetaStack {
+    padding-left: 0;
+    border-left: 0;
+  }
 }
 
 .projectMetaDate {
@@ -842,6 +1000,22 @@
   border-left: 1px solid rgba(0, 0, 0, 0.18);
 }
 
+@media (max-width: 640px) {
+  .projectMeta {
+    margin: 0.25rem 0 1rem;
+  }
+
+  .projectMetaDate,
+  .projectMetaStack {
+    font-size: 0.9rem;
+  }
+
+  .projectMetaStack {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   .projectMetaDate {
     color: #a1a1a1;
@@ -857,11 +1031,27 @@
   margin-bottom: 1.25rem;
 }
 
+@media (max-width: 640px) {
+  .projectDescription {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+}
+
 .contactGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1rem;
   margin-top: 1.5rem;
+}
+
+@media (max-width: 420px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .contactItem {
@@ -873,6 +1063,12 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   text-decoration: none;
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+@media (max-width: 420px) {
+  .contactItem {
+    padding: 1.1rem 1.1rem;
+  }
 }
 
 .contactItem:hover {
@@ -1083,6 +1279,7 @@
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding: 2rem var(--header-padding-x);
   margin-top: 4rem;
+  padding-bottom: calc(2rem + env(safe-area-inset-bottom));
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1105,6 +1302,15 @@
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
+  }
+
+  .footerLeft {
+    justify-content: center;
+  }
+
+  .footerLeftText {
+    align-items: center;
+    text-align: center;
   }
 }
 

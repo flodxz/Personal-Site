@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Fragment, useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import styles from "../../styles/pages/home.module.css";
 import type { Project } from "../content/projects";
 
@@ -381,11 +381,9 @@ export default function ProjectCards({
                           : undefined;
 
                     return (
-                      <Fragment key={index}>
-                        <p className={paragraphClassName}>
-                          {renderParagraphText(block.text)}
-                        </p>
-                      </Fragment>
+                      <p key={index} className={paragraphClassName}>
+                        {renderParagraphText(block.text)}
+                      </p>
                     );
                   });
                 })()}
