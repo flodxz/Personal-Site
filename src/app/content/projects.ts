@@ -135,7 +135,7 @@ export const designProjects: Project[] = [
     stack: "Photoshop · Cinema 4D",
     description: "Click to read more.",
     thumbnail: {
-      src: "/design/headers/headers-preview-1.png",
+      src: "/design/headers/headers-preview-1.webp",
       alt: "Headers preview",
       width: 2200,
       height: 734,
@@ -182,26 +182,103 @@ export const designProjects: Project[] = [
         },
         {
           type: "paragraph",
-          text: "This is a small collection of some of the headers I made back then. I don’t do this 'professionally' anymore, but it was a fun little side hustle.",
+          text: "This is a small collection of some of the headers I made back then. Full project: [Social Media Headers Vol. 1](https://www.behance.net/gallery/162972537/Social-Media-Headers-Vol-1).",
         },
       ],
     },
   },
   {
-    id: "design-2",
-    title: "Design project",
-    period: "Coming soon",
+    id: "thumbnails",
+    title: "Minecraft Thumbnails",
+    period: "Early 2021 - Late 2024",
+    stack: "Photoshop",
     description: "Click to read more.",
     thumbnail: {
-      src: "/flod-banner.png",
-      alt: "Design project thumbnail",
-      width: 1200,
-      height: 630,
+      src: "/design/thumbnails/thumbnail-preview-1.webp",
+      alt: "Minecraft thumbnails preview",
+      width: 3840,
+      height: 2160,
     },
+    links: [
+      {
+        href: "https://www.fiverr.com/flodxz/make-you-a-minecraft-youtube-thumbnail",
+        label: "Fiverr",
+      },
+      {
+        href: "https://payhip.com/flodxz",
+        label: "Payhip",
+      },
+    ],
     modal: {
-      paragraphs: [
-        "Coming soon.",
-        "I’ll add the story, process, and final shots for this design project here.",
+      content: [
+        {
+          type: "paragraph",
+          text: "For a few years, I made Minecraft YouTube thumbnails for clients on a daily basis. Quick briefs with the client, fast turnarounds, and constant iteration to match a creator’s style.",
+        },
+        {
+          type: "image",
+          src: "/design/thumbnails/thumbnail-1.webp",
+          alt: "Minecraft thumbnail example",
+          width: 1920,
+          height: 1080,
+        },
+        {
+          type: "paragraph",
+          text: "I did have a Fiverr gig as a side thing, with 70+ reviews averaging 4.9 stars: [fiverr.com/flodxz](https://www.fiverr.com/flodxz/make-you-a-minecraft-youtube-thumbnail). But most of my work didn’t come from Fiverr (Fiverr has quite big fees when you only charge about 10$ per thumbnail...) \n\nAround 90% of my clients were via Discord, where I handled everything from first contact to revisions and accepted my payments via PayPal.",
+        },
+        {
+          type: "imageRow",
+          images: [
+            {
+              src: "/design/thumbnails/thumbnail-2.webp",
+              alt: "Minecraft thumbnail example",
+              width: 1920,
+              height: 1080,
+            },
+            {
+              src: "/design/thumbnails/thumbnail-3.webp",
+              alt: "Minecraft thumbnail example",
+              width: 1920,
+              height: 1080,
+            },
+          ],
+        },
+        {
+          type: "paragraph",
+          text: "Discord made it easy to work quickly: references, feedback, and revisions in one place. For bigger projects I sent invoices using Stripe, which helped keep things organized when a project went beyond “just one thumbnail.”",
+        },
+        {
+          type: "imageRow",
+          images: [
+            {
+              src: "/design/thumbnails/thumbnail-4.webp",
+              alt: "Minecraft thumbnail example",
+              width: 1920,
+              height: 1080,
+            },
+            {
+              src: "/design/thumbnails/thumbnail-5.webp",
+              alt: "Minecraft thumbnail example",
+              width: 1920,
+              height: 1080,
+            },
+          ],
+        },
+        {
+          type: "paragraph",
+          text: "I also ran a Payhip store where I sold GFX asset packs and project files: [payhip.com/flodxz](https://payhip.com/flodxz). \n\nIt was a nice way to package up the stuff I was building anyway (assets, templates, and editable files) and make it useful for other creators.",
+        },
+        {
+          type: "image",
+          src: "/design/thumbnails/thumbnail-6.webp",
+          alt: "Minecraft thumbnail example",
+          width: 1920,
+          height: 1080,
+        },
+        {
+          type: "paragraph",
+          text: "In total I’ve made 300+ thumbnails, generating over 6 million views across the videos they were used on. Over time I got to work with various YouTubers with 500k+ subscribers, which taught me a lot about consistency, brand identity, and what actually makes someone click.",
+        },
       ],
     },
   },

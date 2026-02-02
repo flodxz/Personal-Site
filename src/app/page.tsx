@@ -5,6 +5,8 @@ import PastProjectsSection from "./components/PastProjectsSection";
 import ContactSection from "./components/ContactSection";
 
 export default function Home() {
+  const year = new Date().getFullYear();
+
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -31,37 +33,31 @@ export default function Home() {
 	        <ContactSection />
       </main>
 
-	      <footer className={styles.footer}>
-	        <div className={styles.footerContent}>
-	          <div className={styles.footerLeft}>
-	            <Image
-	              className={styles.calypsoLogo}
-	              src="/calypso-logo.png"
-	              alt=""
-	              width={28}
-	              height={28}
-	            />
-	            <span className={styles.footerText}>Powered by Calypso Inc.</span>
-	            <span className={styles.footerText}>
-	              This project is open source, view it{" "}
-	              <a
-	                className={styles.footerLink}
-	                href="https://github.com/flodlol/Personal-Site"
-	                target="_blank"
-	                rel="noopener noreferrer"
-	              >
-	                here
-	              </a>
-	              .
-	            </span>
-	          </div>
+      <footer className={styles.footer}>
+        <div className={styles.footerContent}>
+          <div className={styles.footerLeft}>
+            <Image
+              className={styles.calypsoLogo}
+              src="/calypso-logo.png"
+              alt=""
+              width={28}
+              height={28}
+            />
+            <div className={styles.footerLeftText}>
+              <span className={styles.footerText}>Powered by Calypso Inc.</span>
+              <span className={styles.footerText}>
+                © {year} Jonas. All rights reserved.
+              </span>
+            </div>
+          </div>
 
-	          <a
-	            className={styles.githubLink}
-	            href="https://github.com/flodlol"
-	            target="_blank"
-	            rel="noopener noreferrer"
-	          >
+          <div className={styles.footerRight}>
+            <a
+              className={styles.githubLink}
+              href="https://github.com/flodlol"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
             <svg
               className={styles.githubIcon}
               viewBox="0 0 24 24"
@@ -74,7 +70,21 @@ export default function Home() {
 	              />
             </svg>
             <span>GitHub</span>
-          </a>
+            </a>
+
+            <span className={styles.footerText}>
+              This project is open source, view it{" "}
+              <a
+                className={styles.footerLink}
+                href="https://github.com/flodlol/Personal-Site"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                here
+              </a>
+              .
+            </span>
+          </div>
         </div>
       </footer>
     </div>

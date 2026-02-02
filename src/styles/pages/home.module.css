@@ -636,6 +636,7 @@
 
 .modalBodyInner p {
   margin: 0;
+  white-space: pre-line;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1111,11 +1112,12 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  flex-wrap: wrap;
 }
 
-.footerLeft .footerText + .footerText {
-  margin-left: 0.5rem;
+.footerLeftText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
 }
 
 .footerLink {
@@ -1139,6 +1141,14 @@
   color: #525252;
 }
 
+.footerRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+  text-align: right;
+}
+
 .githubLink {
   display: inline-flex;
   align-items: center;
@@ -1160,6 +1170,13 @@
 
   .githubLink:hover {
     color: #fff;
+  }
+}
+
+@media (max-width: 640px) {
+  .footerRight {
+    align-items: center;
+    text-align: center;
   }
 }
 
