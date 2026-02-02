@@ -16,8 +16,8 @@ export default function Home() {
     <div className={styles.container}>
       <header className={styles.header}>
         <nav className={styles.nav} aria-label="Primary">
-          <a href="#current-projects">Current</a>
-          <a href="#past-projects">Past</a>
+          <a href="#current-projects">Projects</a>
+          <a href="#timeline">Timeline</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
