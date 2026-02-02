@@ -150,7 +150,7 @@ export const designProjects: Project[] = [
       content: [
         {
           type: "paragraph",
-          text: "In the past, when I was younger, I used to make (Twitter) headers for clients.",
+          text: "I used to make (Twitter) headers for clients.",
         },
         {
           type: "image",
