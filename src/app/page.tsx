@@ -46,7 +46,7 @@ export default function Home() {
 	              This project is open source, view it{" "}
 	              <a
 	                className={styles.footerLink}
-	                href="https://github.com/flodxz/Personal-Site"
+	                href="https://github.com/flodlol/Personal-Site"
 	                target="_blank"
 	                rel="noopener noreferrer"
 	              >
@@ -58,7 +58,7 @@ export default function Home() {
 
 	          <a
 	            className={styles.githubLink}
-	            href="https://github.com/flodxz"
+	            href="https://github.com/flodlol"
 	            target="_blank"
 	            rel="noopener noreferrer"
 	          >

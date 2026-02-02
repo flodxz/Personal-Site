@@ -124,7 +124,7 @@ export default function ContactSection() {
 
         <a
           className={styles.contactItem}
-          href="https://github.com/flodxz"
+          href="https://github.com/flodlol"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -143,7 +143,7 @@ export default function ContactSection() {
           </span>
           <div className={styles.contactText}>
             <div className={styles.contactLabel}>GitHub</div>
-            <div className={styles.contactValue}>github.com/flodxz</div>
+            <div className={styles.contactValue}>github.com/flodlol</div>
           </div>
         </a>
       </div>
