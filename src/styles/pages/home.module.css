@@ -647,6 +647,13 @@
   font-size: 0.74rem;
   font-weight: 600;
   color: #404040;
+  opacity: 0.62;
+  transition: opacity 140ms ease-out;
+}
+
+.heroSkillItem:hover,
+.heroSkillItem:focus-visible {
+  opacity: 1;
 }
 
 .heroSkillIcon {
