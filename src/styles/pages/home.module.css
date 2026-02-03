@@ -576,6 +576,8 @@
 
   .timelineEnd {
     left: 20px;
+    transform: none;
+    padding-left: 18px;
   }
 
   .timelineDot {
@@ -590,19 +592,42 @@
 
   .timelineItem {
     grid-template-columns: 40px 1fr;
+    grid-template-rows: auto auto;
+    align-items: start;
     gap: 0.85rem;
-  }
-
-  .timelineSlot:first-child {
-    display: none;
   }
 
   .timelineSeparator {
     grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .timelineSlot {
+    grid-column: 2;
+  }
+
+  .timelineItem[data-side="left"] .timelineSlot:first-child,
+  .timelineItem[data-side="right"] .timelineSlot:first-child,
+  .timelineItem[data-side="left"] .timelineSlot:last-child,
+  .timelineItem[data-side="right"] .timelineSlot:last-child {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .timelineSlot:first-child {
+    grid-row: 1;
   }
 
   .timelineSlot:last-child {
-    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .timelineItem[data-side="left"] .timelineSlot:first-child {
+    grid-row: 2;
+  }
+
+  .timelineItem[data-side="left"] .timelineSlot:last-child {
+    grid-row: 1;
   }
 
   .timelineContent {
