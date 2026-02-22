@@ -4,7 +4,10 @@ import ProjectCards from "./ProjectCards";
 
 export default function ProjectsSection() {
   return (
-    <section className={styles.section} aria-labelledby="current-projects">
+    <section
+      className={`${styles.section} ${styles.currentProjects}`}
+      aria-labelledby="current-projects"
+    >
       <h2 className={styles.sectionTitle} id="current-projects">
         Projects I&apos;m working on
       </h2>
@@ -12,4 +15,3 @@ export default function ProjectsSection() {
     </section>
   );
 }
-

@@ -909,6 +909,10 @@
   margin-top: 2.5rem;
 }
 
+.currentProjects .projects {
+  grid-template-columns: 1fr;
+}
+
 @media (max-width: 768px) {
   .projects {
     gap: 1.25rem;

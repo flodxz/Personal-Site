@@ -92,6 +92,29 @@ export const currentProjects: Project[] = [
       },
     },
   },
+  {
+    id: "hand-outs",
+    title: "Hand-Outs",
+    period: "February 2026 - Now",
+    stack: "Next.js · TypeScript · PDF.js",
+    description:
+      "A PDF handout generator that converts slide decks into clean, writeable handouts so it’s easy to take notes during lectures.",
+    link: { href: "https://hand-outs.com", label: "Visit hand-outs.com" },
+    logo: {
+      src: "/hand-outs/hand-outs-logo.png",
+      alt: "Hand-Outs logo",
+      width: 1024,
+      height: 1024,
+    },
+    modal: {
+      paragraphs: [
+        "Hand-Outs started as a very specific frustration: professors sharing slide decks as PDFs, but leaving no practical way to annotate them during class. I wanted something that could turn those slides into real handouts in seconds.",
+        "The app takes any PDF slide deck and lays it out into printable, writeable handout pages. You can pick the number of slides per page, control spacing, and add consistent note areas so handwriting doesn’t feel cramped.",
+        "The goal is to keep the original slides readable while giving you enough breathing room to actually use the handout as a working document during lectures.",
+        "I’m actively refining layout presets and export quality so the handouts look good on screen and print cleanly without manual tweaking.",
+      ],
+    },
+  },
 ];
 
 export const pastProjects: Project[] = [
