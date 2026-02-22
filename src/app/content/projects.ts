@@ -161,38 +161,20 @@ export const pastProjects: Project[] = [
 
 export const smallerPythonProjects: Project[] = [
   {
-    id: "python-mini-1",
-    title: "CLI Habit Tracker",
-    period: "2023",
-    stack: "Python · SQLite",
-    description:
-      "A tiny command-line habit tracker with streaks, reminders, and quick weekly summaries.",
-    link: {
-      href: "https://github.com/your-username/cli-habit-tracker",
-      label: "View on GitHub",
-    },
-    modal: {
-      paragraphs: [
-        "A small Python CLI app for tracking daily habits with a simple SQLite database.",
-        "Built to be fast to use: add/check off habits, view streaks, and print lightweight weekly summaries.",
-      ],
-    },
-  },
-  {
-    id: "python-mini-2",
-    title: "Bulk File Renamer",
-    period: "2022",
+    id: "reel-generator",
+    title: "Reel-Generator",
+    period: "August 2024",
     stack: "Python",
     description:
-      "A script that batch-renames files using rules (prefix/suffix, numbering, regex replace).",
+      "A lightweight generator that spits out low-effort meme reels fast so you can get the joke out without over-editing.",
     link: {
-      href: "https://github.com/your-username/bulk-file-renamer",
+      href: "https://github.com/flodlol/Reel-Generator",
       label: "View on GitHub",
     },
     modal: {
       paragraphs: [
-        "A utility script for cleaning up messy folders by renaming files in bulk.",
-        "Supports patterns like numbering, regex find/replace, and safe preview mode before applying changes.",
+        "Reel-Generator is a small Python tool that creates quick, meme-style reels with minimal setup.",
+        "The focus is on speed and repeatability: generate a ready-to-share clip without fiddling with timelines or manual exports.",
       ],
     },
   },
